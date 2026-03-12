@@ -19,25 +19,25 @@ let gameStrt = {
 // x-scissor attack choice
 let routeA = {
     img: "./filler_Img.jpg",
-    imgDesc: "dsvwsdvvdsdsvdsvd",
+    imgDesc: "routeA",
     imgName: "dcdcdcdcdc",
-    story: "s",
+    story: "a",
     buttNameA: "cdcdc",
     buttNameB: "cddcdcdcd",
 }
 // send sabeleye to hospital
 let routeAA = {
     img: "./filler_Img.jpg",
-    imgDesc: "",
+    imgDesc: "routeAA",
     imgName: "",
-    story: "",
+    story: "aa",
     buttNameA: "",
     buttNameB: "",
 }
 // keep sableye at home 
 let routeAB = {
     img: "./filler_Img.jpg",
-    imgDesc: "",
+    imgDesc: "routeAB",
     imgName: "",
     story: "",
     buttNameA: "",
@@ -46,16 +46,16 @@ let routeAB = {
 // tried to leer at em
 let routeB = {
     img: "./filler_Img.jpg",
-    imgDesc: "",
+    imgDesc: "routeB",
     imgName: "",
-    story: "",
+    story: "b",
     buttNameA: "",
     buttNameB: "",
 }
 // reflect on resulted loss and sue
 let routeBA = {
     img: "./filler_Img.jpg",
-    imgDesc: "",
+    imgDesc: "routeBA",
     imgName: "",
     story: "",
     buttNameA: "",
@@ -64,7 +64,7 @@ let routeBA = {
 // sadge physical therapy
 let routeBB = {
     img: "./filler_Img.jpg",
-    imgDesc: "",
+    imgDesc: "routeBB",
     imgName: "",
     story: "",
     buttNameA: "",
@@ -73,16 +73,16 @@ let routeBB = {
 // rut roh you ominous winded
 let routeC = {
     img: "./filler_Img.jpg",
-    imgDesc: "",
+    imgDesc: "routeC",
     imgName: "",
-    story: "",
-    buttNameA: "",
-    buttNameB: "",
+    story: "c",
+    buttNameA: "choice A",
+    buttNameB: "choice B",
 }
 // bury in backyard, but new friend appears
 let routeCA = {
     img: "./filler_Img.jpg",
-    imgDesc: "",
+    imgDesc: "routeCA",
     imgName: "",
     story: "",
     buttNameA: "",
@@ -91,7 +91,7 @@ let routeCA = {
 // have sentimental ring made   
 let routeCB = {
     img: "./filler_Img.jpg",
-    imgDesc: "",
+    imgDesc: "routeCB",
     imgName: "",
     story: "",
     buttNameA: "",
@@ -196,34 +196,52 @@ function displayShifter(routeNum){
 displayShifter(0);
 // event listeners that wait for click and change display
 // based on button pressed and current display
-// to fix bug change event loisteners to compare something other than images
 choiceA.addEventListener("click",()=>{
     console.log("ahahahahahaah")
-    if (curImage.src == gameStrt.img){
+    if (storyTxt.innerHTML == gameStrt.story){
         displayShifter(1)
-    }else if(curImage.src == routeA.img){
+    }else if(storyTxt.innerHTML == routeA.story){
         displayShifter(2)
-    }else if(curImage.src == routeB.img){
+    }else if(storyTxt.innerHTML== routeB.story){
         displayShifter(5)
-    }else if(curImage.src == routeC.img){
+    }else if(storyTxt.innerHTML == routeC.story){
         displayShifter(8)
     }
 })
 choiceB.addEventListener("click",()=>{
     console.log("hahahahahahahaha")
-    if (curImage.src == gameStrt.img){
+    if (storyTxt.innerHTML == gameStrt.story){
         displayShifter(4)
-    }else if(curImage.src == routeA.img){
+    }else if(storyTxt.innerHTML == routeA.story){
         displayShifter(3)
-    }else if(curImage.src == routeB.img){
+    }else if(storyTxt.innerHTML == routeB.story){
         displayShifter(6)
-    }else if(curImage.src == routeC.img){
+    }else if(storyTxt.innerHTML == routeC.story){
         displayShifter(9)
     }
 })
 choiceC.addEventListener("click",()=>{
     console.log("hehehehe")
-    if (curImage.src == gameStrt.img){
+    if (storyTxt.innerHTML == gameStrt.story){
         displayShifter(7)
+    }
+})
+let i=15
+function paceCycle(img1,img2){
+    if(curImage.src == img1){
+        curImage = img2;
+    }else if(curImage.src == img2){
+        curImage = img1;
+    }
+}
+
+choiceA.addEventListener("click",()=>{
+    if(storyTxt.innerHTML == routeAA.story){
+        console.log("did it work?")
+        while(i >0){
+            i--;
+            setTimeout(paceCycle("./filler_Img.jpg","./sableye_battle.jpg"),1000)
+            clearTimeout();
+        }
     }
 })
