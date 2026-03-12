@@ -228,10 +228,11 @@ choiceC.addEventListener("click",()=>{
 })
 let i=15
 function paceCycle(img1,img2){
+    console.log("plzzzzzz")
     if(curImage.src == img1){
-        curImage = img2;
+        curImage.src = img2;
     }else if(curImage.src == img2){
-        curImage = img1;
+        curImage.src = img1;
     }
 }
 
@@ -239,9 +240,30 @@ choiceA.addEventListener("click",()=>{
     if(storyTxt.innerHTML == routeAA.story){
         console.log("did it work?")
         while(i >0){
+            console.log("didididi")
+            setInterval(() => paceCycle("http://127.0.0.1:5500/filler_Img.jpg","http://127.0.0.1:5500/sableye_battle.jpg"),5000)
             i--;
-            setTimeout(paceCycle("./filler_Img.jpg","./sableye_battle.jpg"),1000)
-            clearTimeout();
+        }
+    }
+})
+
+function laBoop(){
+    curImage.src = "./shin_sableye.png"
+    let boopSound = new Audio("partyfavorraspypart_ac01_3_5HTQ8CW.mp3");
+    boopSound.play()
+}
+choiceA.addEventListener("click",()=>{
+    if(storyTxt.innerHTML = routeCA.story){
+        boop = document.createElement("p")
+        boop.innerHTML = "boop ze snoot? (press b)"
+        document.appendChild(boop);
+    }
+})
+document.addEventListener("keydown",()=>{
+    if(storyTxt.innerHTML = routeCA.story){
+        if(event.key === "b"){
+            laBoop();
+            curImage.src = routeCA.img;
         }
     }
 })
