@@ -22,9 +22,9 @@ let gameStrt = {
 
 // x-scissor attack choice path
 let routeA = {
-    img: "./filler_Img.jpg",
-    imgDesc: "routeA",
-    imgName: "poisoning",
+    img: "./poison_jab.png",
+    imgDesc: "Riolu using a moraly questionable attack. (aren't poisoned weapons like a war crime?)",
+    imgName: "Battle_Poisoning",
     story: "The Riolu takes the minor cuts and shoots back with a jab. OH woah nvm that was a poison jab, dude your sableye might die.",
     buttNameA: "TAKE TO HOSPITAL",
     buttNameB: "if you can't afford the hospital, i think the Walgreens <b>might</b> have some antidote.",
@@ -32,29 +32,29 @@ let routeA = {
 
 // send sabeleye to hospital path
 let routeAA = {
-    img: "./filler_Img.jpg",
-    imgDesc: "routeAA",
-    imgName: "",
-    story: "aa",
+    img: "./pacing_left_half.png",
+    imgDesc: "you pacing endlessly in wait of your pokemon's return",
+    imgName: "Home_Empty",
+    story: "With your closest companion resting in the hospital, your once warm home feels... cold and hollow.",
     buttNameA: "",
     buttNameB: "",
 }
 
 // keep sableye at home path
 let routeAB = {
-    img: "./filler_Img.jpg",
-    imgDesc: "routeAB",
-    imgName: "",
-    story: "AB",
+    img: "./sickly_athome.png",
+    imgDesc: "you standing over your bedridden Sableye",
+    imgName: "Home_Sickly",
+    story: "You bring Sableye home and watch as they wither away due to Riolu's poisonous strike. The pharmacy meds only postpone Sabeleye's peaceful death.",
     buttNameA: "",
     buttNameB: "",
 }
 
 // tried to leer at em path
 let routeB = {
-    img: "./filler_Img.jpg",
-    imgDesc: "routeB",
-    imgName: "Injury",
+    img: "./sableye_gethit.png",
+    imgDesc: "Sableye being handily defeated by Riolu's gu-. i mean 'bullet punch' ",
+    imgName: "Battle_Injury",
     story: "OH, the uh Riolu responded with a bullet punch... Not lethal but, Sableye just got folded like a lawn chair. ",
     buttNameA: "YO sue that guy! ",
     buttNameB: "maybe physical therapy can get that arm working again?",
@@ -62,50 +62,50 @@ let routeB = {
 
 // reflect on resulted loss and sue path
 let routeBA = {
-    img: "./filler_Img.jpg",
-    imgDesc: "routeBA",
-    imgName: "",
-    story: "BA",
+    img: "./im_gonnasue.jpg",
+    imgDesc: "you deciding to sue, and the resulting compensation",
+    imgName: "Home_Sue",
+    story: "after reflecting on the damages, you choose to sue the trainer, which left you with enough compensation to take care of Sableye's injuries and have plenty left to spare",
     buttNameA: "",
     buttNameB: "",
 }
 
 // sadge physical therapy path
 let routeBB = {
-    img: "./filler_Img.jpg",
-    imgDesc: "routeBB",
-    imgName: "",
-    story: "BB",
+    img: "./phys therap.jpg",
+    imgDesc: "You administering physical therapy to your Sableye",
+    imgName: "Home_Recovery",
+    story: "Your Sableye was rendered incredibly weak in the upperbody due to the injury. So hopefully physical therapy can get them back to burrowing and all the things they love.",
     buttNameA: "",
     buttNameB: "",
 }
 
 // rut roh you ominous winded path
 let routeC = {
-    img: "./filler_Img.jpg",
+    img: "./sauteed.png",
     imgDesc: "Sableye getting absolutely pieced up in close combat",
-    imgName: "Um death?",
-    story: "c",
+    imgName: "Battle_Death?",
+    story: "Riolu decides to use close combat, the martial artist very quickly overwhelms and conquers your Sableye... and uh they may have went a little far.",
     buttNameA: "Well I-uh guess you can bury them in your backyard",
-    buttNameB: "Y'know it <b><i>was</i></b> a sableye, so you could have some jewelery to remember them by.",
+    buttNameB: "Y'know it <b><i>was</i></b> a sableye, so you could have some jewelery made to remember them by.",
 }
 
 // bury in backyard, but new friend appears path
 let routeCA = {
-    img: "./filler_Img.jpg",
-    imgDesc: "routeCA",
-    imgName: "",
-    story: "CA story",
-    buttNameA: "choice a",
-    buttNameB: "choise b",
+    img: "./grave+.png",
+    imgDesc: "your best pals grave, and its other visitor",
+    imgName: "Home_Backyard",
+    story: "You take your pal home one last time. Once they die, you settle to bury them. A small shiny Sableye soon arrives to feed on the gemstone contents of your friend, and they seem to like you. ",
+    buttNameA: "",
+    buttNameB: "",
 }
 
 // have sentimental ring made path
 let routeCB = {
-    img: "./filler_Img.jpg",
-    imgDesc: "routeCB",
-    imgName: "",
-    story: "CB",
+    img: "./he_gone.png",
+    imgDesc: "You standing at home with a small ring",
+    imgName: "Home_Mourn",
+    story: "After the initial grief washes away you take the small chestgem of your friend to a jeweler and they fashion you a ring to remeber them by.",
     buttNameA: "",
     buttNameB: "",
 }
@@ -259,7 +259,7 @@ locDesc.addEventListener("mousedown",()=>{
 // and had to make a counter to make sure it only happens once
 let h =0;
 choiceB.addEventListener("mouseover",()=>{
-    if(storyTxt.innerHTML == routeA.story){
+    if(storyTxt.innerHTML == routeA.story){ // intermittedly runs if you are in the game start screen and hover over b button before hitting a button
         if(h<1){
             window.alert("seriously? are you absolutely sure? poison moves are some strong stuff, i'm not sure if pharmacy stuff is fully enough to address... that.")
             h++;
@@ -280,7 +280,7 @@ let i=15
 choiceA.addEventListener("click",()=>{
     if(storyTxt.innerHTML == routeAA.story){
         while(i >0){                      //pacing img 1                            pacing img 2                                          
-            setInterval(() => paceCycle("http://127.0.0.1:5500/filler_Img.jpg","http://127.0.0.1:5500/sableye_battle.jpg"),4000)
+            setInterval(() => paceCycle("http://127.0.0.1:5500/pacing_left_half.png","http://127.0.0.1:5500/pace_right_half.png"),2000)
             i--;
         }
     }
@@ -324,12 +324,12 @@ choiceB.addEventListener("click",()=>{
 //changes image when mouse over image, changes it back when mouse leaves
 curImage.addEventListener("mouseover", ()=>{
     if(storyTxt.innerHTML == routeBA.story){
-        curImage.src = "./shin_sableye.png" //court case win/healthy sableye img
+        curImage.src = "./WERERICHSPONGEBOBMIBOI.png" 
     }
 })
 curImage.addEventListener("mouseout",()=>{
     if(storyTxt.innerHTML == routeBA.story){
-        curImage.src = "./filler_img.jpg"
+        curImage.src = "./im_gonnasue.jpg"
     }
 })
 
@@ -337,7 +337,7 @@ curImage.addEventListener("mouseout",()=>{
 //changes image to... the result of Riolu's attack when mouse goes over the image
 curImage.addEventListener("mouseover",()=>{
     if(storyTxt.innerHTML == routeC.story){
-        curImage.src = "./sableye_battle.jpg" // filler, make stabbed/bleeding out img
+        curImage.src = "./rut_roh.png"
         locDesc.innerHTML = "Sableye... fatally bleeding out"
     }
 })

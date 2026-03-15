@@ -1,0 +1,24 @@
+body {
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+p{
+    text-shadow: cyan 1px 0 3px;
+}
+button {
+    background-color: cyan;
+    color: rgb(246, 64, 206);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+img{
+    border: 5px solid;
+    border-color: whitesmoke;
+}
